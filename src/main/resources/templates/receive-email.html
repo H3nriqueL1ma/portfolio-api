@@ -3,16 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Envio de Contato - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .email-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h2 {
+            color: #007BFF;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            background-color: gray;
+        }
+        .footer img {
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
+<div class="email-container">
     <section>
-        <h2>Olá, Henrique! O cliente <b th:text="${name}">name</b> enviou uma mensagem!</h2>
-
-        <p th:text="${message}">Mensagem do cliente: message</p>
-
-        <div>
-            <img src="images/Logo-Portfolio.png" data-th-src="|cid:springLogo|" height="100" alt="logo-email"/>
-        </div>
+        <h2>Olá, Henrique!</h2>
+        <p>O cliente <b th:text="${name}">name</b> enviou uma mensagem!</p>
+        <h4>Email do cliente: <b th:text="${email}">email</b></h4>
+        <p><strong>Mensagem do cliente:</strong></p>
+        <p th:text="${message}">message</p>
     </section>
+    <div class="footer">
+        <img src="images/Logo-Portfolio.png" data-th-src="|cid:springLogo|" alt="Logo Portfolio"/>
+    </div>
+</div>
 </body>
 </html>

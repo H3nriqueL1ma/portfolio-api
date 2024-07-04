@@ -9,6 +9,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
@@ -32,6 +33,7 @@ public class EmailService {
         this.templateEngine = templateEngine;
     }
 
+    @Async
     public void sendEmail(EmailModel emailModel) throws UnsupportedEncodingException, MessagingException {
         String confirmationUrl = "generated_confirmation_url";
         String emailFrom = environment.getProperty("spring.mail.properties.mail.smtp.from");
