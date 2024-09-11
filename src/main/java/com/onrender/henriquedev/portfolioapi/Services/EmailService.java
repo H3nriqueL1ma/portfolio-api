@@ -16,6 +16,7 @@ import org.thymeleaf.context.Context;
 
 import java.io.UnsupportedEncodingException;
 
+@Async
 @Service
 public class EmailService {
     private static final String TEMPLATE_NAME = "receive-email";
